@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  font-family: "Lato", sans-serif;
+  font-family: "Raleway", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
+}
+.primary-btn {
+  @apply bg-[#4293E5] text-white font-bold px-6 py-2 rounded-md cursor-pointer;
+}
+
+.bg-primary {
+  @apply bg-[#4293E5];
+}
+
+.text-primary {
+  @apply text-[#4293E5];
+}
+
+.active {
+  @apply font-semibold tracking-wide text-[#4293E5] transition-colors duration-200;
+}
+
+.default {
+  @apply font-semibold tracking-wide text-gray-700 transition-colors duration-200 hover:text-[#4293E5];
+}
