@@ -1,21 +1,21 @@
 import { Link, NavLink } from "react-router-dom";
-// import logo from "../assets/logo/carToyExpress.png";
+import { authContext } from "../../../Providers/AuthProvider";
+import { useContext } from "react";
+import LoadingSpiner from "../../../components/LoadingSpiner";
 
 const Navbar = () => {
-  //   const { user, loading,logOut } = useContext(authContext);
-  // console.log(user, loading);
+  const { user, loading, logOut } = useContext(authContext);
+  console.log(user, loading);
 
-  //   const handleLogOut = ()=>{
-  //     logOut()
-  //     .then(()=>{})
-  //     .catch(()=>{})
-  //   }
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch(() => {});
+  };
 
-  //   if(loading){
-  //     return <LoadingSpiner/>
-  //   }
-  const user = false;
-  const loading = false;
+  if (loading) {
+    return <LoadingSpiner />;
+  }
   const navItems = (
     // navs items
     <>
