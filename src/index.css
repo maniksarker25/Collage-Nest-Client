@@ -21,7 +21,7 @@ body {
 }
 
 .active {
-  @apply font-semibold tracking-wide text-[#4293E5] transition-colors duration-200;
+  @apply font-semibold  tracking-wide text-[#4293E5] transition-colors duration-200;
 }
 
 .default {

@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import { authContext } from "../../../Providers/AuthProvider";
 import { useContext } from "react";
 import LoadingSpiner from "../../../components/LoadingSpiner";
+import { FaSearch } from "react-icons/fa";
 
 const Navbar = () => {
   const { user, loading, logOut } = useContext(authContext);
@@ -73,13 +74,15 @@ const Navbar = () => {
           </ul>
         </div>
         <Link to="/">
-          <div className="flex items-center ">
+          <div className="flex items-center gap-4  ">
             {/* <img className=" h-10 w-10 lg:w-20 lg:mt-1 lg:h-20" src={logo} alt="" /> */}
-            <h3 className="lg:text-2xl  font-semibold">CollageNest</h3>
+            <h3 className="lg:text-2xl flex  font-semibold">Collage <span className="text-blue-400">Nest</span></h3>
+            <input className="px-2 py-2 w-full rounded-md" type="text" placeholder="Search Collage" />
+            <FaSearch className="text-5xl -ml-2 text-blue-400"></FaSearch>
           </div>
         </Link>
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <div className="navbar-center hidden lg:flex ">
         <ul className="menu space-x-8 menu-horizontal px-1">{navItems}</ul>
       </div>
       <div className="navbar-end">
