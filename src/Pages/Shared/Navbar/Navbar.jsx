@@ -17,7 +17,7 @@ const Navbar = () => {
   const user = false;
   const loading = false;
   const navItems = (
-    // nave items
+    // navs items
     <>
       <NavLink
         to="/"
