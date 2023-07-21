@@ -26,19 +26,19 @@ const Navbar = () => {
         <li>Home</li>
       </NavLink>
       <NavLink
-        to="/allToys"
+        to="/collages"
         className={({ isActive }) => (isActive ? "active" : "default")}
       >
         <li>Collages</li>
       </NavLink>
       <NavLink
-        to="blog"
+        to="/admission"
         className={({ isActive }) => (isActive ? "active" : "default")}
       >
         <li>Admission</li>
       </NavLink>
       <NavLink
-        to="myToy"
+        to="myCollage"
         className={({ isActive }) => (isActive ? "active" : "default")}
       >
         <li>My Collage</li>
