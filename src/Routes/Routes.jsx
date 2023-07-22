@@ -7,12 +7,14 @@ import Collages from "../Pages/Collages/Collages";
 import Admission from "../Pages/Admission/Admission";
 import MyCollage from "../Pages/MyCollage/MyCollage";
 import CollageDetails from "../Pages/CollageDetials/CollageDetails";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 
 const router = createBrowserRouter([
     {
         path:'/',
         element:<Main/>,
+        errorElement:<ErrorPage/>,
         children:[
             {
                 path:'/',
