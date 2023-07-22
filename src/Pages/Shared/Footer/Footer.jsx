@@ -7,10 +7,10 @@ const Footer = () => {
       <footer className="footer max-w-screen-xl text-white mx-auto px-10 pt-20 pb-6s  ">
         <div className="-mt-8">
           {/* <img className="w-32 h-32" src={logo} alt="" /> */}
-          <p>
-            Dream Ride Toy
+          <p className="text-2xl">
+            CollageNest
             <br />
-            World Best Car Toy House
+            Best Platform For Collage Apply
           </p>
         </div>
         <div>
@@ -53,7 +53,7 @@ const Footer = () => {
       </footer>
       <div className="text-white text-center pt-8  pb-20">
         <hr className="max-w-screen-md mx-auto mb-4" />
-        Copyright © 2023 - All right reserved by Dream Ride Toy
+        Copyright © 2023 - All right reserved by CollageNest
       </div>
     </div>
   );

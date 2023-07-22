@@ -76,7 +76,7 @@ const Navbar = () => {
         <Link to="/">
           <div className="flex items-center gap-4  ">
             {/* <img className=" h-10 w-10 lg:w-20 lg:mt-1 lg:h-20" src={logo} alt="" /> */}
-            <h3 className="lg:text-2xl flex  font-semibold">Collage <span className="text-blue-400">Nest</span></h3>
+            <h3 className="lg:text-2xl md:flex hidden   font-semibold">Collage <span className="text-blue-400">Nest</span></h3>
             <input className="px-2 py-2 w-full rounded-md" type="text" placeholder="Search Collage" />
             <FaSearch className="text-5xl -ml-2 text-blue-400"></FaSearch>
           </div>
