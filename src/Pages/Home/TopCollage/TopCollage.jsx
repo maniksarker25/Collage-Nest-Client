@@ -1,13 +1,22 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import LoadingSpiner from "../../../components/LoadingSpiner";
 
 const TopCollage = () => {
   const [collages, setCollages] = useState([]);
+  const [loading,setLoading] = useState(true)
   useEffect(() => {
+    setLoading(true)
     fetch("http://localhost:5000/collages")
       .then((res) => res.json())
-      .then((data) => setCollages(data));
+      .then((data) => {
+        setCollages(data)
+        setLoading(false)
+      });
   }, []);
+  if(loading){
+    <LoadingSpiner/>
+  }
   return (
     <div className="my-16">
       <h1 className="text-center text-4xl font-bold mb-12">Our Top Collages</h1>
