@@ -73,14 +73,14 @@ const Navbar = () => {
             {navItems}
           </ul>
         </div>
-        <Link to="/">
+        <div>
           <div className="flex items-center gap-4  ">
             {/* <img className=" h-10 w-10 lg:w-20 lg:mt-1 lg:h-20" src={logo} alt="" /> */}
             <h3 className="lg:text-2xl md:flex hidden   font-semibold">Collage <span className="text-blue-400">Nest</span></h3>
             <input className="px-2 py-2 w-full rounded-md" type="text" placeholder="Search Collage" />
             <FaSearch className="text-5xl -ml-2 text-blue-400"></FaSearch>
           </div>
-        </Link>
+        </div>
       </div>
       <div className="navbar-center hidden lg:flex ">
         <ul className="menu space-x-8 menu-horizontal px-1">{navItems}</ul>
@@ -90,7 +90,7 @@ const Navbar = () => {
           "Loading"
         ) : user ? (
           <>
-            {user.photoURL ? (
+           <Link to='/profileInformation'> {user.photoURL ? (
               <img
                 title={user?.displayName}
                 className="w-8 h-8 rounded-full mr-4 cursor-pointer"
@@ -102,7 +102,7 @@ const Navbar = () => {
                 className="w-10 mr-2 cursor-pointer rounded-full"
                 src="https://img.freepik.com/premium-vector/young-smiling-man-avatar-man-with-brown-beard-mustache-hair-wearing-yellow-sweater-sweatshirt-3d-vector-people-character-illustration-cartoon-minimal-style_365941-860.jpg?w=2000"
               ></img>
-            )}
+            )}</Link>
             <button onClick={handleLogOut} className="primary-btn">
               LogOut
             </button>

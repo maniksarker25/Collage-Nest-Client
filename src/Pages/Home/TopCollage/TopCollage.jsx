@@ -43,13 +43,13 @@ const TopCollage = () => {
               </p>
               <div className="flex justify-between">
                 <div>
-                  <h4 className="text-2xl font-bold">Events</h4>
+                  <h4 className="text-xl font-bold">Events</h4>
                   {collage.events.map((event, i) => (
                     <li key={i}>{event}</li>
                   ))}
                 </div>
                 <div className="mr-16">
-                    <h4 className="text-2xl font-bold">Sports</h4>
+                    <h4 className="text-xl font-bold">Sports</h4>
                     {
                         collage.sports.map((sport,i)=><li key={i}>{sport}</li>)
                     }
