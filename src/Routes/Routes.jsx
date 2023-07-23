@@ -11,6 +11,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import PrivateRoute from "./PrivateRoute";
 import AdmissionForm from "../Pages/Admission/AdmissionForm";
 import ProfileInformation from "../Pages/ProfileInformation/ProfileInformation";
+import SearchCollage from "../Pages/SearchCollage/SearchCollage";
 
 
 const router = createBrowserRouter([
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
             {
                 path:'profileInformation',
                 element:<ProfileInformation/>
+            },
+            {
+                path:'searchCollage',
+                element:<SearchCollage/>
             }
         ]
 
