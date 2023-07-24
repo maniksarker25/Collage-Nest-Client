@@ -20,6 +20,8 @@ const ProfileInformation = () => {
       });
   }, [user]);
 
+  // handle delete------
+
   const handleDeleteCollage = (id) => {
     Swal.fire({
       title: "Are you sure?",
