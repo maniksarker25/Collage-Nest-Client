@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import {
+  GithubAuthProvider,
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
   getAuth,
@@ -18,6 +19,7 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const googleProvider = new GoogleAuthProvider();
+  const githubProvider = new GithubAuthProvider();
   const [singleCollage,setSingleCollage] = useState([]);
   console.log(singleCollage)
 
@@ -47,7 +49,10 @@ const AuthProvider = ({ children }) => {
   const resetPassword = (email)=>{
     return sendPasswordResetEmail(auth,email);
 }
-
+const signInGithub = ()=>{
+  setLoading(true);
+  return signInWithPopup(auth,githubProvider)
+}
   // find user
   useEffect(()=>{
     const unsubscribe = onAuthStateChanged(auth,(currentUser)=>{
@@ -71,7 +76,8 @@ const AuthProvider = ({ children }) => {
     setLoading,
     setSingleCollage,
     resetPassword,
-    singleCollage
+    singleCollage,
+    signInGithub
   };
   return (
     <authContext.Provider value={authInfo}>{children}</authContext.Provider>

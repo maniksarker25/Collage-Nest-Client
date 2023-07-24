@@ -1,12 +1,12 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import loginImg from "../../assets/login/login.png"
-import { FaFacebook, FaGoogle } from "react-icons/fa";
+import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
 import { useContext, useRef, useState } from "react";
 import { authContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
 
 const Login = () => {
-  const { signIn, googleSignIn,setLoading ,resetPassword} = useContext(authContext);
+  const { signIn, googleSignIn,setLoading ,resetPassword,signInGithub} = useContext(authContext);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const location = useLocation();
@@ -47,6 +47,22 @@ const Login = () => {
       .catch((error) => {
         const errorMessage = error.message;
         console.log(errorMessage);
+        setLoading(false)
+      });
+  };
+
+  // github login
+  const handleGithubSignIn = () => {
+    signInGithub()
+      .then((result) => {
+        const loggedUser = result.user;
+        // console.log(loggedUser);
+        navigate(from, { replace: true });
+
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        // console.log(errorMessage);
         setLoading(false)
       });
   };
@@ -119,8 +135,8 @@ const Login = () => {
           </div>
           <p className="text-center -mt-4">Or Sign In With</p>
           <div className="text-center my-4">
-            <button className="mr-2 bg-stone-200 p-2 rounded-full text-blue-500 text-xl">
-              <FaFacebook />
+            <button onClick={handleGithubSignIn} className="mr-2 bg-stone-200 p-2 rounded-full text-black text-xl">
+              <FaGithub />
             </button>
             <button
               onClick={handleGoogleSignIn}
