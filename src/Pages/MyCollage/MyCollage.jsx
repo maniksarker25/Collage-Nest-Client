@@ -68,7 +68,7 @@ const MyCollage = () => {
                 src={collage?.collageImage}
                 alt="Shoes"
               />
-            </figure>
+          </figure>
             <div className="card-body">
               <h2 className="card-title">{collage?.collageName}</h2>
               <p>Number Of Research: {collage?.num_of_research}</p>

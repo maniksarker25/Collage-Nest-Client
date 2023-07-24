@@ -55,7 +55,7 @@ const ProfileInformation = () => {
   if (loading) {
     <LoadingSpiner />;
   }
-  // console.log(myCollages)
+  
   return (
     <div className="w-full md:w-2/3 lg:w-1/3 mx-auto border-2 border-blue-400 p-4 mt-8 ">
       <img className="rounded-full w-40 mx-auto" src={user?.photoURL} alt="" />
