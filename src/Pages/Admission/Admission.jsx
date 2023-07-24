@@ -5,12 +5,12 @@ import { Link } from "react-router-dom";
 const Admission = () => {
     const [collages,setCollages] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/collages')
+        fetch('https://collage-nest-server.vercel.app/collages')
         .then(res=>res.json())
         .then(data=>setCollages(data))
     },[])
     return (
-        <div className="mx-auto w-full md:w-2/3 lg-w-3/5 ">
+        <div className="mx-auto w-full md:w-2/3 lg-w-3/5 px-4 md:px-4">
             <h2 className="font-bold text-center text-3xl my-12">Apply Your Dream Collage</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {

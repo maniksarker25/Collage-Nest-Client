@@ -53,7 +53,7 @@ const AdmissionForm = () => {
             collageId:id
           };
           // console.log(appliedCollage)
-          fetch("http://localhost:5000/appliedCollage", {
+          fetch("https://collage-nest-server.vercel.app/appliedCollage", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(appliedCollage),
@@ -79,7 +79,7 @@ const AdmissionForm = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:5000/collages/${id}`)
+    fetch(`https://collage-nest-server.vercel.app/collages/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setCollage(data);

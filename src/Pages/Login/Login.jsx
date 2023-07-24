@@ -1,16 +1,18 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import loginImg from "../../assets/login/login.png"
 import { FaFacebook, FaGoogle } from "react-icons/fa";
-import { useContext, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { authContext } from "../../Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const Login = () => {
-  const { signIn, googleSignIn,setLoading } = useContext(authContext);
+  const { signIn, googleSignIn,setLoading ,resetPassword} = useContext(authContext);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const location = useLocation();
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/";
+  const emailRef = useRef();
   // handle login
   const handleLogin = (event) => {
     event.preventDefault();
@@ -49,6 +51,23 @@ const Login = () => {
       });
   };
 
+
+  // handle reset password
+  const handleResetPassword = () => {
+    const email = emailRef.current.value;
+    if (!email) {
+      setError("Provide email for reset password");
+      return
+    }
+    resetPassword(email)
+      .then(() => {})
+      .catch((error) => {
+        const errorMessage = error.message;
+        setError(errorMessage);
+      });
+      Swal.fire('Check you email for reset pass')
+  };
+
   return (
     <div className="hero mt-4 lg:mt-16">
       <div className="hero-content flex-col lg:flex-row gap-24">
@@ -67,6 +86,7 @@ const Login = () => {
                   type="text"
                   placeholder="email"
                   name="email"
+                  ref={emailRef}
                   required
                   className="input input-bordered"
                 />
@@ -83,9 +103,11 @@ const Login = () => {
                   className="input input-bordered"
                 />
                 <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
-                    Forgot password?
-                  </a>
+                <p onClick={handleResetPassword}>
+                    <a href="#" className="label-text-alt link link-hover">
+                      Forgot password?
+                    </a>
+                  </p>
                 </label>
               </div>
               {error && <p className="text-red-600">{error}</p>}

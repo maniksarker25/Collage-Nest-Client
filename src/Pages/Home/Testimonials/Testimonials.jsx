@@ -18,7 +18,7 @@ const Testimonials = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("http://localhost:5000/collages")
+    fetch("https://collage-nest-server.vercel.app/collages")
       .then((res) => res.json())
       .then((data) => {
         setCollages(data);

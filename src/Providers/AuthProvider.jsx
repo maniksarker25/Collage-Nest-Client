@@ -4,6 +4,7 @@ import {
   createUserWithEmailAndPassword,
   getAuth,
   onAuthStateChanged,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
@@ -42,6 +43,10 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return signOut(auth);
   };
+  // reset pass
+  const resetPassword = (email)=>{
+    return sendPasswordResetEmail(auth,email);
+}
 
   // find user
   useEffect(()=>{
@@ -65,6 +70,7 @@ const AuthProvider = ({ children }) => {
     googleSignIn,
     setLoading,
     setSingleCollage,
+    resetPassword,
     singleCollage
   };
   return (

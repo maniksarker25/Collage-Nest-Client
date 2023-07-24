@@ -27,7 +27,7 @@ const MyCollage = () => {
     const rating = form.rating.value;
     const review = {reviewDescription:reviewDescription,rating:rating}
     console.log(review)
-    fetch(`http://localhost:5000/review/${collage?.collageId}`,{
+    fetch(`https://collage-nest-server.vercel.app/review/${collage?.collageId}`,{
       method:"PUT",
       headers:{"content-type":"application/json"},
       body:JSON.stringify(review)
@@ -43,7 +43,7 @@ const MyCollage = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:5000/myCollage?email=${user?.email}`)
+    fetch(`https://collage-nest-server.vercel.app/myCollage?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setMyCollages(data);
@@ -55,12 +55,12 @@ const MyCollage = () => {
     <LoadingSpiner />;
   }
   return (
-    <div className="my-12">
+    <div className="mt-32 md:16 mb-12">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {myCollages.map((collage) => (
           <div
             key={collage?._id}
-            className="card card-compact w-96 bg-base-100 shadow-xl"
+            className="card card-compact w-full bg-base-100 shadow-xl"
           >
             <figure>
               <img

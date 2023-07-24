@@ -34,8 +34,7 @@ const SignUp = () => {
         });
         console.log(createdUser);
         setSuccess("User Create Successfully");
-        logOut();
-        navigate("/login");
+        navigate("/");
         form.reset();
       })
       .catch((error) => {

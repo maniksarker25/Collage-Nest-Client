@@ -29,7 +29,7 @@ const Navbar = () => {
     e.preventDefault();
     const form = e.target;
     const collageName = form.collageName.value;
-    fetch(`http://localhost:5000/collage/${collageName}`)
+    fetch(`https://collage-nest-server.vercel.app/collage/${collageName}`)
       .then((res) => res.json())
       .then((data) => {
         setSearchCollage(data);
